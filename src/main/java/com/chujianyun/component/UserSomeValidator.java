@@ -25,7 +25,7 @@ public class UserSomeValidator extends Validator<UserParam> {
         if (param == null) {
             throw new BusinessException("");
         }
-        // 根据userId某个条件
+        // 模拟服务，根据userId某个条件
         boolean isSome = RandomUtils.nextBoolean();
         if (!isSome) {
             throw new BusinessException("某种条件不满足哦！");

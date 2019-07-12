@@ -14,7 +14,7 @@ public class UserLevelValidator extends Validator<UserParam> {
         if (param == null) {
             throw new BusinessException("");
         }
-        // 根据userId查询等级
+        // 模拟服务，根据userId查询等级
         boolean isBiggerThan50 = RandomUtils.nextBoolean();
         if (!isBiggerThan50) {
             throw new BusinessException("低于50级");
