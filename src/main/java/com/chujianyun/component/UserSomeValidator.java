@@ -3,10 +3,14 @@ package com.chujianyun.component;
 import com.chujianyun.entity.enums.UserValidateGroupEnum;
 import com.chujianyun.entity.param.UserParam;
 import com.chujianyun.exception.BusinessException;
+import org.apache.commons.collections4.SetUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.util.HashSet;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * 特殊情况才校验
@@ -16,7 +20,7 @@ public class UserSomeValidator extends Validator<UserParam> {
 
     @PostConstruct
     public void init() {
-        setGroup(UserValidateGroupEnum.SOME);
+        setGroups(Stream.of(UserValidateGroupEnum.SOME).collect(Collectors.toSet()));
     }
 
     @Override
